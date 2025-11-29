@@ -36,13 +36,24 @@ spec:
         component: mysql
         project: roboshop
         tier: database
-    spec:
-      containers:
-      - name: mysql
-        image: muralikrishnapydi/mysql:v1
-        envFrom:
-        - secretRef:
-            name: mysql
+    # spec:
+    #   containers:
+    #   - name: mysql
+    #     image: muralikrishnapydi/mysql:v1
+    #     envFrom:
+    #     - secretRef:
+    #         name: mysql
+      spec:
+        containers:
+        - name: mysql
+          image: muralikrishnapydi/mysql:v1
+          volumeMounts:
+          - name: mysql-secret
+            mountPath: /etc/mysql      # REQUIRED → password file placed here
+        volumes:
+        - name: mysql-secret
+          secret:
+            secretName: mysql
 ---
 apiVersion: v1
 kind: Service
