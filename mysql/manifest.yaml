@@ -39,7 +39,8 @@ spec:
         image: muralikrishnapydi/mysql:v1
         volumeMounts:
         - name: mysql-secret
-          mountPath: /etc/mysql
+          mountPath: /etc/mysql/password
+          subPath: MYSQL_ROOT_PASSWORD
       volumes:
       - name: mysql-secret
         secret:
