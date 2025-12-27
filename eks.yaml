@@ -7,10 +7,11 @@ metadata:
 
 managedNodeGroups:
   - name: roboshop
-    instanceTypes: ["m7i-flex.large", "m7i-flex.large","m7i-flex.large","m7i-flex.large"]
+    instanceTypes: ["t3.small", "t3.small","t3.small","t3.small"]
     desiredCapacity: 3
     spot: false
-
+#instanceTypes: ["m7i-flex.large", "m7i-flex.large","m7i-flex.large","m7i-flex.large"]    
+#t3.small
 #["m5.large", "c5.large","c5.large","c5.large"]
 #m7i-flex.large
 
