@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
       - name: user
-        image: muralikrishnapydi/user:v1
+        image: joindevops/user:v1
         envFrom:
         - configMapRef:
             name: user
