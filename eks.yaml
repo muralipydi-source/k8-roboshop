@@ -7,9 +7,14 @@ metadata:
 
 managedNodeGroups:
   - name: roboshop
-    instanceTypes: ["t3.small", "t3.small","t3.small","t3.small"]
+    instanceTypes: ["t3.small"]
     desiredCapacity: 3
+    minSize: 3
+    maxSize: 10
     spot: false
+    # instanceTypes: ["t3.small", "t3.small","t3.small","t3.small"] # we can use instanceTypes: ["t3.small"]
+    # desiredCapacity: 3   # instanceTypes: ["t3.small", "t3.medium"] Multi-instance types (best practice)
+    # minSize ≤ desiredCapacity ≤ maxSize
 #instanceTypes: ["m7i-flex.large", "m7i-flex.large","m7i-flex.large","m7i-flex.large"]    
 #t3.small
 #["m5.large", "c5.large","c5.large","c5.large"]
